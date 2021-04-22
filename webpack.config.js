@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require(`html-webpack-plugin`)
 const { CleanWebpackPlugin } = require(`clean-webpack-plugin`)
+const DotenvWebpackPlugin = require(`dotenv-webpack`)
 
 module.exports = {
   entry: `./src/js/app.js`,
@@ -8,9 +9,10 @@ module.exports = {
     filename: `bundle.js`,
   },
   plugins: [
+    new DotenvWebpackPlugin(),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: `TITLE`,
+      title: `Astral Connection`,
       favicon: `src/images/favicon.png`,
       template: `src/index.html`, // template file
       filename: `index.html`, // output file
